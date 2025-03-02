@@ -6,4 +6,5 @@ namespace Patterns.CreationalPatterns.AbstractFactory.Factories;
 public class AppleFactory : IOsFactory
 {
     public IFileSystem GetFileSystem() => new AppleFileSystem();
+    public IAntivirusSystem GetAntivirusSystem() => new AppleAntivirusSystem();
 }
