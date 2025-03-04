@@ -1,19 +1,39 @@
-﻿using Patterns.CreationalPatterns.AbstractFactory;
-using Patterns.CreationalPatterns.Singleton;
+﻿using Patterns.CreationalPatterns;
 
-namespace Patterns;
-
-class Program
+namespace Patterns
 {
-    static void Main()
+    class Program
     {
-        var model = ConfigurationManager.Instance.DeviceModel;
-        Console.WriteLine($"The name of the device is {model.DeviceName}" +
-                          $" and the operating system is {model.OperatingSystem}" +
-                          $" and the storage capacity is {model.Storage}");
-
-        Application app = new();
-        app.CreateDirectory("\\Users\\Public\\Documents\\MyFolder");
-        app.DeleteDirectory("\\Users\\Public\\Documents\\MyFolder");
+        static void Main()
+        {
+            var torrentApp = new TorrentApplication();
+            Console.WriteLine("==================================");
+            torrentApp.DownloadTorrent();
+            Console.WriteLine("==================================\n");
+            
+            Console.WriteLine("==================================");
+            torrentApp.InstallApplication();
+            Console.WriteLine("==================================\n");
+            
+            Console.WriteLine("==================================");
+            torrentApp.OpenApplication();
+            Console.WriteLine("==================================\n");
+            
+            Console.WriteLine("==================================");
+            torrentApp.SetApplicationSettings();
+            Console.WriteLine("==================================\n");
+            
+            Console.WriteLine("==================================");
+            torrentApp.UninstallApplication();
+            Console.WriteLine("==================================\n");
+            
+            Console.WriteLine("==================================");
+            torrentApp.DeleteTorrent();
+            Console.WriteLine("==================================\n");
+            
+            Console.WriteLine("==================================");
+            torrentApp.CloneRobot();
+            Console.WriteLine("==================================\n");
+        }
     }
 }
